@@ -1,0 +1,72 @@
+@import "../../assets/styles/variables.scss";
+
+.sort {
+  display: block;
+  color: $text-color-secondary;
+  margin-bottom: 20px;
+
+  &__description-text {
+    display: none;
+  }
+
+  &__element {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__element-text {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+
+  &__button {
+    margin-right: 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+// styles for big mobile size (576px) and higher
+@media all and (min-width: 36em) {
+  .sort {
+    &__elements-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    &__element {
+      justify-content: unset;
+      margin-right: 30px;
+      margin-bottom: 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// styles for tablet size (768px) and higher
+@media all and (min-width: 48em) {
+  .sort {
+    display: flex;
+    justify-content: space-between;
+
+    &__description-text {
+      display: block;
+      font-size: 20px;
+      margin-right: 12px;
+    }
+  }
+}
