@@ -1,0 +1,63 @@
+@import "../../assets/styles/variables.scss";
+
+.repository-information {
+  padding: 40px 0;
+  border-bottom: 1px solid $text-color-primary;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+
+  &__main-info {
+    margin-bottom: 20px;
+  }
+
+  &__name {
+    font-size: 24px;
+  }
+
+  &__rating-info {
+    font-size: 16px;
+  }
+
+  &__stars {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+
+  &__description {
+    font-size: 16px;
+  }
+}
+
+// styles for big mobile size (576px) and higher
+@media all and (min-width: 36em) {
+  .repository-information {
+    &__main-info {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__rating-info {
+      font-size: 20px;
+    }
+
+    &__stars {
+      justify-content: end;
+    }
+  }
+}
+
+// styles for tablet size (768px) and higher
+@media all and (min-width: 48em) {
+  .repository-information {
+    &__rating {
+      display: flex;
+    }
+
+    &__stars {
+      margin-right: 20px;
+    }
+  }
+}
