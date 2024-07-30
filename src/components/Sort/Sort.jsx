@@ -14,7 +14,7 @@ export default function Sort(props) {
             <p className="sort__element-text">stars</p>
             <button
               className="sort__button"
-              onClick={() => handleSort("stars", "up")}
+              onClick={() => handleSort("stars", "desc")}
             >
               <span className="material-symbols-rounded">
                 keyboard_arrow_up
@@ -22,7 +22,7 @@ export default function Sort(props) {
             </button>
             <button
               className="sort__button"
-              onClick={() => handleSort("stars", "down")}
+              onClick={() => handleSort("stars", "asc")}
             >
               <span className="material-symbols-rounded">
                 keyboard_arrow_down
@@ -31,12 +31,18 @@ export default function Sort(props) {
           </div>
           <div className="sort__element">
             <p className="sort__element-text">forks</p>
-            <button className="sort__button">
+            <button
+              className="sort__button"
+              onClick={() => handleSort("forks", "desc")}
+            >
               <span className="material-symbols-rounded">
                 keyboard_arrow_up
               </span>
             </button>
-            <button className="sort__button">
+            <button
+              className="sort__button"
+              onClick={() => handleSort("forks", "asc")}
+            >
               <span className="material-symbols-rounded">
                 keyboard_arrow_down
               </span>
@@ -44,12 +50,18 @@ export default function Sort(props) {
           </div>
           <div className="sort__element">
             <p className="sort__element-text">updated</p>
-            <button className="sort__button">
+            <button
+              className="sort__button"
+              onClick={() => handleSort("updated", "asc")}
+            >
               <span className="material-symbols-rounded">
                 keyboard_arrow_up
               </span>
             </button>
-            <button className="sort__button">
+            <button
+              className="sort__button"
+              onClick={() => handleSort("updated", "desc")}
+            >
               <span className="material-symbols-rounded">
                 keyboard_arrow_down
               </span>

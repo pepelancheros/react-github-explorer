@@ -5,4 +5,22 @@
   background-color: $background-color-secondary;
   padding: 10px 30px;
   min-height: 400px;
+  position: relative;
+}
+
+.repository-information__container {
+  border-bottom: 1px solid $text-color-primary;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
+
+.initial-results-text {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

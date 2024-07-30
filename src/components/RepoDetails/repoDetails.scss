@@ -1,0 +1,48 @@
+@import "../../assets/styles/variables.scss";
+
+.details {
+  padding: 30px 0;
+  position: relative;
+
+  &__close-button {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    background-color: transparent;
+    border: none;
+  }
+
+  &__name {
+    font-size: 24px;
+  }
+
+  &__date {
+    margin-bottom: 20px;
+    font-size: 12px;
+  }
+
+  &__contributors-title {
+    font-size: 20px;
+  }
+
+  a {
+    color: $text-color-links;
+    text-decoration: none;
+  }
+}
+
+// styles for tablet size (768px) and higher
+@media all and (min-width: 48em) {
+  .details {
+    &__main-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    &__date {
+      text-align: end;
+      font-size: 16px;
+    }
+  }
+}

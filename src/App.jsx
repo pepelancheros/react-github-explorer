@@ -6,48 +6,32 @@ import { useState, useEffect } from "react";
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [sortQuery, setSortQuery] = useState([]);
+  const [sortQuery, setSortQuery] = useState(undefined);
   const [results, setResults] = useState([]);
 
   useEffect(() => {
     getSearchResult();
-  }, [searchQuery]);
+  }, [searchQuery, sortQuery]);
 
   function setAPIText(query) {
     setSearchQuery(query);
   }
 
-  function setAPISortOrder(elementToSort) {
-    setSortQuery((prevSortQuery) => {
-      if (prevSortQuery.length === 0) {
-        return [elementToSort];
-      } else {
-        return prevSortQuery.map((prevSortedElement) => {
-          console.log(
-            "prevSortedElement",
-            prevSortedElement,
-            "elementToSort",
-            elementToSort
-          );
-          // if (prevSortedElement.element === sortQuery.element) {
-          return [...prevSortedElement, elementToSort];
-          //     console.log(
-          //       "prevSortedElement",
-          //       prevSortedElement,
-          //       "sortQuery",
-          //       sortQuery
-          //     );
-          // }
-        });
-      }
-    });
+  function setAPISortOrder(newSort) {
+    setSortQuery(newSort);
   }
 
   function getSearchResult() {
-    const endpoint = "https://api.github.com/search/repositories";
-    const pagination = "&page=1&per_page=10";
     if (searchQuery) {
-      fetch(endpoint + "?q=" + searchQuery + pagination)
+      const endpoint = "https://api.github.com/search/repositories";
+      const pagination = "&page=1&per_page=10";
+      const sortQueries = sortQuery
+        ? `&sort=${sortQuery.element}&order=${sortQuery.order}`
+        : "";
+      const endpointWithQueries =
+        endpoint + "?q=" + searchQuery + pagination + sortQueries;
+
+      fetch(endpointWithQueries)
         .then((res) => res.json())
         .then((data) => setResults(data.items));
     }
@@ -55,6 +39,7 @@ function App() {
 
   return (
     <>
+      (
       <div className="page">
         <h1 className="page-title">GitHub Explorer</h1>
         <div className="explorer">
@@ -63,6 +48,7 @@ function App() {
           <Results resultsArray={results}></Results>
         </div>
       </div>
+      )
     </>
   );
 }

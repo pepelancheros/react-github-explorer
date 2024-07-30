@@ -10,7 +10,8 @@ export default function RepoInfo(props) {
         <div className="repository-information__rating">
           <div className="repository-information__rating-info">
             <p className="repository-information__stars">
-              {props.stars} <span class="material-symbols-rounded">star</span>
+              {props.stars}{" "}
+              <span className="material-symbols-rounded">star</span>
             </p>
           </div>
           <p className="repository-information__rating-info">
