@@ -21,12 +21,20 @@ export default function RepoDetails(props) {
 
   return (
     <div className="details">
-      <button onClick={props.handleGoBack} className="details__close-button">
-        <span className="material-symbols-rounded">close</span>
-      </button>
+      <div className="details__header">
+        <button
+          onClick={props.handleGoBack}
+          className="details__go-back-button"
+        >
+          <span class="material-symbols-rounded">arrow_back</span>Go back
+        </button>
+        <h2 className="details__title">Repository details</h2>
+        <button onClick={props.handleGoBack} className="details__close-button">
+          <span className="material-symbols-rounded">close</span>
+        </button>
+      </div>
       <div className="details__main-info">
         <p className="details__name">
-          Repository:{" "}
           <a target="_blank" rel="noopener" href={props.currentRepo.html_url}>
             {props.currentRepo.name}
           </a>

@@ -6,6 +6,10 @@ import RepoDetails from "../RepoDetails/RepoDetails";
 export default function Results(props) {
   const [currentRepo, setCurrentRepo] = useState(null);
 
+  useEffect(() => {
+    setCurrentRepo(null);
+  }, [props.resultsArray]);
+
   const results = props.resultsArray.map((repo) => {
     return (
       <button
