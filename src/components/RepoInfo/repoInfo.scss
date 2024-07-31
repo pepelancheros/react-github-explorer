@@ -2,6 +2,10 @@
 
 .repository-information {
   padding: 40px 0;
+  &:hover {
+    color: $text-color-links;
+    cursor: pointer;
+  }
 
   &__main-info {
     margin-bottom: 20px;

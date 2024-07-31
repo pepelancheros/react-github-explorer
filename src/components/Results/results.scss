@@ -9,7 +9,11 @@
 }
 
 .repository-information__container {
+  border: none;
   border-bottom: 1px solid $text-color-primary;
+  background-color: transparent;
+  width: 100%;
+  text-align: left;
 
   &:last-of-type {
     border-bottom: none;

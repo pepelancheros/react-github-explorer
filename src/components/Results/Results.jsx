@@ -8,7 +8,7 @@ export default function Results(props) {
 
   const results = props.resultsArray.map((repo) => {
     return (
-      <div
+      <button
         key={repo.id}
         className="repository-information__container"
         onClick={() => setCurrentRepo(repo)}
@@ -20,7 +20,7 @@ export default function Results(props) {
           forks={repo.forks}
           description={repo.description}
         ></RepoInfo>
-      </div>
+      </button>
     );
   });
   const details = (
