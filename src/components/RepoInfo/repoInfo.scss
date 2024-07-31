@@ -15,6 +15,10 @@
     font-size: 24px;
   }
 
+  &__rating {
+    min-width: fit-content;
+  }
+
   &__rating-info {
     font-size: 16px;
   }
@@ -27,6 +31,10 @@
 
   &__description {
     font-size: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }
 
