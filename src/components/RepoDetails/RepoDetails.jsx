@@ -1,6 +1,24 @@
 import "./repoDetails.scss";
+import { useState, useEffect } from "react";
 
 export default function RepoDetails(props) {
+  const [contributors, setContributors] = useState([]);
+  const contributorsHtml = contributors.map((contributor) => (
+    <p className="details__contributor-name" key={contributor.id}>
+      {contributor.login}
+    </p>
+  ));
+
+  useEffect(() => {
+    getContributors();
+  }, []);
+
+  function getContributors() {
+    fetch(props.currentRepo.contributors_url)
+      .then((res) => res.json())
+      .then((data) => setContributors(data));
+  }
+
   return (
     <div className="details">
       <button onClick={props.handleGoBack} className="details__close-button">
@@ -29,7 +47,7 @@ export default function RepoDetails(props) {
       </p>
       <div className="details__contributors">
         <p className="details__contributors-title">contributors:</p>
-        <p>{props.currentRepo.contributor?.login}</p>
+        {contributorsHtml}
       </div>
     </div>
   );

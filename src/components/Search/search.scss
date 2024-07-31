@@ -3,6 +3,7 @@
 .search {
   display: flex;
   margin-bottom: 24px;
+  justify-content: center;
 
   &__label {
     visibility: hidden;
@@ -24,12 +25,16 @@
     border-radius: 50px;
     padding: 12px 24px;
     border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 16px;
+    letter-spacing: 1px;
   }
 }
 
 // styles for big mobil size (576px) and higher
 @media all and (min-width: 36em) {
   .search {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
   }
 }
