@@ -1,0 +1,59 @@
+@import "../../assets/styles/variables.scss";
+
+.paginator {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+
+  &__numbers-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+
+  &__number-container {
+    list-style: none;
+  }
+
+  &__number {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    color: $background-color-secondary;
+    border-radius: 59px;
+    text-align: center;
+    padding: 6px;
+    margin: 0 8px;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+
+    &--active {
+      background-color: $background-color-secondary;
+      color: #000;
+    }
+  }
+
+  &__arrow-button {
+    background-color: transparent;
+    color: $background-color-secondary;
+    border: none;
+    cursor: pointer;
+
+    &--disabled {
+      pointer-events: none;
+      opacity: 0.2;
+      cursor: not-allowed;
+    }
+  }
+}
+
+// styles for tablet size (768px) and higher
+@media all and (min-width: 48em) {
+  .paginator {
+    &__number {
+      margin: 0 15px;
+    }
+  }
+}
