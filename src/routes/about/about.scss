@@ -1,0 +1,35 @@
+@import "../../assets/styles/variables.scss";
+
+.about {
+  max-width: 900px;
+  margin: 30px auto 0;
+  padding: 0 20px;
+  width: 100%;
+  width: -moz-available; /* WebKit-based browsers will ignore this. */
+  width: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
+  width: fill-available;
+  color: $text-color-secondary;
+
+  p {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+}
+
+// styles for big mobile size (576px) and higher
+@media all and (min-width: 36em) {
+  .about {
+    min-width: 500px;
+    padding: 0 40px;
+  }
+}
+
+// styles for tablet size (768px) and higher
+@media all and (min-width: 48em) {
+  .about {
+    margin-top: 60px;
+    p {
+      font-size: 28px;
+    }
+  }
+}

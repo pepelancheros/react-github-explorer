@@ -1,20 +1,31 @@
 import "./assets/styles/generic-styles.scss";
-import Explorer from "./routes/Explorer";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
+import About from "./routes/about/About";
+import Explorer from "./routes/explorer/Explorer";
+import Home from "./routes/home/Home";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Explorer />,
-    },
-  ]);
+  // const router = createBrowserRouter([
+  //   {
+  //     path: "/",
+  //     element: <Home />,
+  //   },
+  //   {
+  //     path: "/explorer",
+  //     element: <Explorer />,
+  //   },
+  // ]);
 
   return (
-    <>
-      (
-      <RouterProvider router={router} />)
-    </>
+    <div className="page">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/explorer" element={<Explorer />} />
+        <Route path="/about" element={<About />}></Route>
+      </Routes>
+    </div>
   );
 }
 

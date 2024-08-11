@@ -1,8 +1,9 @@
-import Sort from "../components/Sort/Sort";
-import Search from "../components/Search/Search";
-import Results from "../components/Results/Results";
-import Paginator from "../components/Paginator/Paginator";
+import Sort from "../../components/Sort/Sort";
+import Search from "../../components/Search/Search";
+import Results from "../../components/Results/Results";
+import Paginator from "../../components/Paginator/Paginator";
 import { useState, useEffect } from "react";
+import "./explorer.scss";
 
 export default function Explorer() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -47,17 +48,14 @@ export default function Explorer() {
   }
 
   return (
-    <div className="page">
-      <h1 className="page-title">GitHub Explorer</h1>
-      <div className="explorer">
-        <Search setAPIText={setAPIText}></Search>
-        <Sort setAPISortOrder={setAPISortOrder}></Sort>
-        <Results resultsArray={results}></Results>
-        <Paginator
-          totalItems={totalItems}
-          setPageNumber={setPageQuery}
-        ></Paginator>
-      </div>
+    <div className="explorer">
+      <Search setAPIText={setAPIText}></Search>
+      <Sort setAPISortOrder={setAPISortOrder}></Sort>
+      <Results resultsArray={results}></Results>
+      <Paginator
+        totalItems={totalItems}
+        setPageNumber={setPageQuery}
+      ></Paginator>
     </div>
   );
 }

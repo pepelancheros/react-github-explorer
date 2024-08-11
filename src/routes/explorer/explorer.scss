@@ -1,0 +1,17 @@
+.explorer {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 20px;
+  width: 100%;
+  width: -moz-available; /* WebKit-based browsers will ignore this. */
+  width: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
+  width: fill-available;
+}
+
+// styles for big mobile size (576px) and higher
+@media all and (min-width: 36em) {
+  .explorer {
+    min-width: 500px;
+    padding: 0 40px;
+  }
+}

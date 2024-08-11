@@ -20,7 +20,7 @@
     font-size: 16px;
 
     &:hover {
-      color: $text-color-links;
+      color: $color-purple-200;
     }
   }
 
@@ -34,7 +34,7 @@
     cursor: pointer;
 
     &:hover {
-      color: $text-color-links;
+      color: $color-purple-200;
     }
   }
 
@@ -59,7 +59,7 @@
   }
 
   a {
-    color: $text-color-links;
+    color: $color-purple-200;
     text-decoration: none;
 
     &:hover {

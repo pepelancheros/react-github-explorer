@@ -1,0 +1,119 @@
+@import "../../assets/styles/variables.scss";
+
+.navbar {
+  margin: 20px 0 10px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  &__container {
+    width: 100%;
+  }
+
+  &__desktop {
+    display: none;
+  }
+
+  &__mobile {
+    justify-content: center;
+  }
+
+  &__hamburger {
+    position: absolute;
+    left: 20px;
+    background-color: transparent;
+    color: $text-color-secondary;
+    border: none;
+    padding: 0;
+    top: 22px;
+
+    span {
+      font-size: 40px;
+    }
+  }
+
+  .logo-link {
+    color: $text-color-secondary;
+    margin: 0 30px;
+    font-size: 24px;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      font-size: 24px;
+      color: $text-color-secondary;
+      margin: 5px 30px;
+      padding: 10px 5px;
+
+      &:hover {
+        color: $text-color-links;
+      }
+
+      &.active {
+        border-bottom: 2px solid;
+        color: $text-color-links;
+        border-image: linear-gradient(
+            to right,
+            $text-color-links 65%,
+            transparent 35%
+          )
+          100% 1;
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  &__modal {
+    padding-top: 20px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    background: $background-color;
+    height: 100%;
+    top: 0;
+    z-index: 100;
+  }
+}
+
+// styles for big mobile size (576px) and higher
+@media all and (min-width: 36em) {
+  .navbar {
+    &__hamburger {
+      left: 40px;
+      top: 28px;
+
+      span {
+        font-size: 48px;
+      }
+    }
+
+    .logo-link {
+      font-size: 40px;
+    }
+  }
+}
+
+// styles for tablet size (768px) and higher
+@media all and (min-width: 48em) {
+  .navbar {
+    margin-bottom: 50px;
+
+    &__desktop {
+      display: flex;
+    }
+
+    &__mobile {
+      display: none;
+    }
+
+    .links {
+      flex-direction: row;
+    }
+  }
+}
