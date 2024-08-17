@@ -1,5 +1,7 @@
 # React github explorer
 
+This is a github explorer created to show my abilities with React, Rest APIs, responsive web design and accesibility.
+
 This project was generated with the [Vite plugin for react](https://github.com/vitejs/vite-plugin-react)
 
 ## Start 🚀
