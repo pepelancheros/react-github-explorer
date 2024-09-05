@@ -2,7 +2,7 @@
 
 .about {
   max-width: 900px;
-  margin: 30px auto 0;
+  margin: 30px auto;
   padding: 0 20px;
   width: 100%;
   width: -moz-available; /* WebKit-based browsers will ignore this. */
@@ -10,10 +10,65 @@
   width: fill-available;
   color: $text-color-secondary;
 
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
   p {
     font-size: 20px;
-    margin-bottom: 16px;
+    margin-bottom: 22px;
   }
+
+  h3 {
+    font-size: 22px;
+    font-weight: 500;
+  }
+
+  a {
+    color: $text-color-links;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__text {
+    margin-right: 20px;
+  }
+
+  &__image-container {
+    order: -1;
+    display: flex;
+    justify-content: center;
+
+    img {
+      max-width: 250px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__contact-info {
+    margin-bottom: 28px;
+
+    span {
+      vertical-align: sub;
+    }
+
+    img {
+      width: 24px;
+    }
+
+    p {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+  }
+}
+
+.github-logo {
+  filter: invert(1);
 }
 
 // styles for big mobile size (576px) and higher
@@ -27,9 +82,32 @@
 // styles for tablet size (768px) and higher
 @media all and (min-width: 48em) {
   .about {
-    margin-top: 60px;
     p {
-      font-size: 28px;
+      font-size: 24px;
+    }
+
+    h3 {
+      font-size: 24px;
+      font-weight: 500;
+    }
+
+    &__content {
+      flex-direction: row;
+    }
+
+    &__image-container {
+      order: 1;
+
+      img {
+        max-width: 300px;
+        height: fit-content;
+      }
+    }
+
+    &__contact-info {
+      p {
+        font-size: 20px;
+      }
     }
   }
 }

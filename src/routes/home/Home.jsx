@@ -17,10 +17,11 @@ export default function Home() {
           <h2>Hey!</h2>
           <p>
             Welcome to the GitHub explorer. Here you can discover a world of
-            open-source projects. Simply go to the explorer and type some
-            keywords to find more details about the different repositories.
+            open-source projects. Go to the explorer and type-in some keywords
+            related to your search. You can also click on a repository to find
+            more details.
           </p>
-          <p>Enjoy your journey through the open-source community!</p>
+          <p>Enjoy your journey through the open-source community.</p>
           <Link className="home__button" to="/explorer">
             Take me to the explorer!
           </Link>
