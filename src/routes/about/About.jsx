@@ -1,4 +1,8 @@
 import "./about.scss";
+import colleaguesWorking from "../../assets/images/colleagues-working-at-the-desk.png";
+import linkedInLogo from "../../assets/images/linkedin-logo.png";
+import gitHubLogo from "../../assets/images/github-logo.png";
+import instagramLogo from "../../assets/images/instagram-logo.png";
 
 export default function About() {
   return (
@@ -26,46 +30,37 @@ export default function About() {
           </p>
         </div>
         <div className="about__image-container">
-          <img
-            src="src/assets/images/collegues-working-at-the-desk.png"
-            alt="colleagues working at a desk"
-          />
+          <img src={colleaguesWorking} alt="colleagues working at a desk" />
         </div>
       </div>
       <div className="about__contact-info">
         <h3>Contact me at: </h3>
-        <p>
-          <span>
+        <p className="contact-element">
+          <span className="logo-container">
             <img
-              className="github-logo"
-              src="src/assets/images/github-logo.png"
+              className="github-logo logo"
+              src={gitHubLogo}
               alt="github logo"
             />
           </span>{" "}
           <a href="https://github.com/pepelancheros">pepelancheros</a>
         </p>
-        <p>
-          <span>
-            <img
-              src="src/assets/images/linkedin-logo.png"
-              alt="linkedin logo"
-            />
+        <p className="contact-element">
+          <span className="logo-container">
+            <img className="logo" src={linkedInLogo} alt="linkedin logo" />
           </span>{" "}
           <a href="https://www.linkedin.com/in/sebastian-lancheros/">
             Sebastian Lancheros Olarte
           </a>
         </p>
-        <p>
-          <span>
-            <img
-              src="src/assets/images/instagram-logo.png"
-              alt="instagram logo"
-            />
+        <p className="contact-element">
+          <span className="logo-container">
+            <img className="logo" src={instagramLogo} alt="instagram logo" />
           </span>{" "}
           <a href="https://www.instagram.com/pepeligroso_/">@pepeligroso_</a>
         </p>
-        <p>
-          <span class="material-symbols-outlined">mail</span>{" "}
+        <p className="contact-element">
+          <span className="material-symbols-outlined logo-container">mail</span>{" "}
           <a href="mailto:pepe.lancheros@gmail.com">pepe.lancheros@gmail.com</a>
         </p>
       </div>

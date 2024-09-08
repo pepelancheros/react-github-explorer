@@ -15,11 +15,6 @@
     flex-direction: column;
   }
 
-  p {
-    font-size: 20px;
-    margin-bottom: 22px;
-  }
-
   h3 {
     font-size: 22px;
     font-weight: 500;
@@ -36,6 +31,11 @@
 
   &__text {
     margin-right: 20px;
+
+    p {
+      font-size: 20px;
+      margin-bottom: 22px;
+    }
   }
 
   &__image-container {
@@ -56,11 +56,15 @@
       vertical-align: sub;
     }
 
-    img {
+    .logo-container {
+      margin-right: 5px;
+    }
+
+    .logo {
       width: 24px;
     }
 
-    p {
+    .contact-element {
       font-size: 20px;
       margin-bottom: 12px;
     }
@@ -105,8 +109,9 @@
     }
 
     &__contact-info {
-      p {
+      .contact-element {
         font-size: 20px;
+        margin-bottom: 10px;
       }
     }
   }
